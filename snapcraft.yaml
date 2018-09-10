@@ -21,13 +21,13 @@ parts:
       - pkg-config
       - libasound2-dev
     stage-packages: [libpulse0]
-    snap:
+    prime:
       - usr/local/bin
       - usr/local/include
       - usr/local/lib
 
   mycroft-core:
-    plugin: python2
+    plugin: python
     requirements: parts/mycroft-core/src/requirements.txt
     source: https://github.com/MycroftAI/mycroft-core.git
     source-type: git
