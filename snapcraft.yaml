@@ -3,7 +3,7 @@ version: 18.8.0
 summary:  79 char long summary
 description:  a longer description for the snap
 confinement: devmode # use "strict" to enforce system access only via declared interfaces
-build-packages: [python-dev, python-virtualenv, python-setuptools, python-gobject-2-dev, virtualenvwrapper, libtool, libffi-dev, libssl-dev, autoconf, bison, swig, libglib2.0-dev, portaudio19-dev, mpg123, python-psutil, speech-dispatcher]
+build-packages: [python-dev, python-virtualenv, python-setuptools, python-gobject-2-dev, virtualenvwrapper, libpcre2-dev, libtool, libffi-dev, libssl-dev, autoconf, bison, swig, libglib2.0-dev, portaudio19-dev, mpg123, python-psutil, speech-dispatcher]
 parts:
   mimic:
     plugin: autotools
@@ -28,10 +28,9 @@ parts:
 
   mycroft-core:
     plugin: python
-    requirements: parts/mycroft-core/src/requirements.txt
     source: https://github.com/MycroftAI/mycroft-core.git
     source-type: git
-    source-branch: feature/snapcraft
+    source-branch: dev
     build-packages: [python-psutil, python-setuptools]
     stage-packages: [speech-dispatcher]
 
